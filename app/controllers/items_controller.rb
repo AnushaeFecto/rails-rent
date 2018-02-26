@@ -1,4 +1,4 @@
-class ItemController < ApplicationController
+class ItemsController < ApplicationController
   def index
     @items = Item.all
   end
@@ -13,6 +13,8 @@ class ItemController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.user = current_user
+    # raise
     if @item.save
       redirect_to item_path(@item)
     else
