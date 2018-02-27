@@ -22,8 +22,9 @@ gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'figaro'
-gem 'pundit'
 
+gem 'faker'
+gem 'pundit'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
