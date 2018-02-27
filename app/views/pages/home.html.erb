@@ -1,6 +1,12 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,50,50,0.1) 0%, rgba(0,36,61,0.3) 30%), url('https://images.unsplash.com/photo-1502727135886-df285cc8379f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6182683b9eb37511afe1ad1c3576e75a&auto=format&fit=crop&w=1050&q=80');">
-  <div class="typed">
-    <span id="banner-typed-text"></span>
+  <div class="container">
+    <div class="typed">
+      <span id="banner-typed-text"></span>
+    </div>
+    <form class="form-inline">
+      <input class="input-search form-control" type="text" placeholder="Search">
+      <button class="btn btn-search" type="submit">Search</button>
+    </form>
   </div>
 </div>
 
@@ -11,8 +17,9 @@
         <div class="col-xs-12 col-sm-4">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
               url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
-            <h5> Rent Me </h5>
-              <%= item.description %>
+              <%= link_to item_path(item), class: "rent-link" do%>
+                <p> Rent Me </p>
+              <%end%>
           </div>
         </div>
       <% end %>
