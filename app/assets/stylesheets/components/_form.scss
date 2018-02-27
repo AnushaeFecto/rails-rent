@@ -16,3 +16,22 @@
     border-radius: 10px;
   }
 }
+
+.signup-form{
+  font-style: bold;
+  margin-top: 70px;
+  border: 1px dotted $brown;
+  padding: 40px;
+  border-radius: 10px;
+  background-size: cover;
+  background-color: $cream;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  input{
+    border-radius: 10px;
+  }
+  select{
+    border-radius: 10px;
+  }
+}
