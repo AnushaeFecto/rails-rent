@@ -1,1 +1,31 @@
-My Page
+<div class="container align-middle content">
+
+  <div class="row profile-box">
+    <p>hello</p>
+  </div>
+
+  <div class="row profile-box">
+    <p>hello</p>
+  </div>
+
+
+  <div class="row">
+    <div class="cards">
+      <% @user.items.each do |item| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
+              <%= link_to item_path(item) do%>
+                <h3 class="btn-profile">View</h3>
+              <%end%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
+

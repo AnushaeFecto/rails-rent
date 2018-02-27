@@ -13,18 +13,16 @@
 
 <div class="container align-middle content">
   <div class="row">
-    <div class="cards">
-      <% @items.each do |item| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
-              <%= link_to item_path(item), class: "rent-link" do%>
-                <p> See more </p>
-              <%end%>
-          </div>
+    <% @items.each do |item| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
+            <%= link_to item_path(item), class: "rent-link" do%>
+              <p> See more </p>
+            <%end%>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
