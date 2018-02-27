@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @items = policy_scope(Item).order(created_at: :desc)
@@ -28,11 +28,12 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def update
-    authorize @item
     @item = Item.find(params[:id])
+    authorize @item
     @item.update(item_params)
     redirect_to item_path(@item)
   end
