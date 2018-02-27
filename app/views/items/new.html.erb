@@ -1,3 +1,7 @@
+<% if policy(Item).create? %>
+  <%= render 'form', item: @item %>
+<% end %>
+
 <p>TESTING</p>
 
-<%= render 'form', item: @item %>
+

@@ -1,3 +1,5 @@
+
+
 <p>index</p>
 
 <%= cl_image_tag("zjxkvcloz27p72rmbncq.png", width: 400, height: 300, crop: :fill) %>
@@ -9,3 +11,19 @@
 <% end %>
 
 <h3><%= link_to 'Create new item', new_item_path %></h3>
+
+
+
+
+<!-- Hi Velina, Anushae: the below items are the code you need for the update, show, edit, buttons/links, due to Pundit -->
+<% @items.each do |item| %>
+  <% if policy(item).edit? %>
+    <%= link_to "Update", edit_item_path(item) %>
+  <% end %>
+  <% if policy(item).show? %>
+    <%= link_to "Show", item %>
+  <% end %>
+  <% if policy(item).destroy? %>
+    <%= link_to "Destroy", item, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
