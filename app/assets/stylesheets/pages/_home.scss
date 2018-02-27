@@ -1,6 +1,5 @@
 // Specific CSS for your home-page
 .banner {
-  margin-top:70px;
   color: #FEF4E8;
   font-size: 40px;
   text-align: center;
@@ -29,3 +28,11 @@
   margin-top: 20px;
 }
 
+.rent-link{
+  color: #FFFDE1;
+}
+
+.rent-link :hover{
+  color:#FFFDE1;
+  opacity: 0.5;
+}

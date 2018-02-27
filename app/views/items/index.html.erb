@@ -2,21 +2,26 @@
 <%= cl_image_tag("image.png", width: 400, height: 300, crop: :fill) %>
 
 <h1>All items</h1>
-
 <div class="container">
-
   <div class="row">
     <% @items.each do |item| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="new-card" style="background-image: url('https://source.unsplash.com/900x900/?dress');">
+  <div class="col-xs-12 col-sm-4">
+    <div class="new-card" style="background-image: url('https://source.unsplash.com/900x900/?dress');">
         <p><%= item.size %></p>
-      </div>
     </div>
-  <% end %>
+    <% if policy(item).edit? %>
+      <%= link_to "Update", edit_item_path(item) %>
+    <% end %>
+    <% if policy(item).show? %>
+      <%= link_to "Show", item %>
+    <% end %>
+    <% if policy(item).destroy? %>
+      <%= link_to "Destroy", item, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </div>
-
+  <% end %>
 </div>
-
-
-
+</div>
 <p><%= link_to 'Create new item', new_item_path %></p>
+
+
