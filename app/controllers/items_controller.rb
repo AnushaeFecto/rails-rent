@@ -1,20 +1,24 @@
 class ItemsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @items = Item.all
+    @items = policy_scope(Item).order(created_at: :desc)
   end
 
   def show
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def new
     @item = Item.new
+    authorize @item
   end
 
   def create
     @item = Item.new(item_params)
+    authorize @item
     @item.user = current_user
-    # raise
     if @item.save
       redirect_to item_path(@item)
     else
@@ -24,15 +28,18 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def update
     @item = Item.find(params[:id])
+    authorize @item
     @item.update(item_params)
     redirect_to item_path(@item)
   end
 
   def destroy
+    authorize @item
     @item = Item.find(params[:id])
     @item.destroy
     redirect_to items_path
