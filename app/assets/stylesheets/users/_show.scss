@@ -9,3 +9,31 @@
  margin-bottom: 25px;
  margin-top: 25px;
 }
+
+.centered {
+  text-align: center;
+}
+
+.rental-box {
+  background-color: $cream;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.v-align {
+
+  height: 120px;
+}
+.choice-btn {
+  width: 90px;
+}
+
+.btns {
+  margin-left: 25%;
+}
