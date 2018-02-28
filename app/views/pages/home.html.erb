@@ -19,6 +19,7 @@
             url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
             <%= link_to item_path(item), class: "rent-link" do%>
               <p> See more </p>
+              <h5>£ <%= item.price %></h5>
             <%end%>
         </div>
       </div>

@@ -9,14 +9,24 @@
   border-radius: 10px;
   margin-bottom: 15px;
   & h5{
-    margin: 0px !important;
     position: absolute;
-    bottom: 5px;
+    bottom: 15px;
     padding: 15px;
+    color: $white;
   } & p {
     bottom: 5px;
     position: absolute;
     padding-left: 15px;
+    color: $white;
   }
 }
 
+.card h5:hover{
+  opacity:1;
+  color: $white;
+}
+
+.card p:hover{
+  color: $white;
+  opacity: 0.7;
+}
