@@ -13,8 +13,32 @@
         <li>Description - <%= @item.description %></li>
      </ul>
      <div class="text-center">
-      <%= link_to "Rent", "#", class: "btn-general", id: "rent-button"  %>
+      <div class="rent">
+        <a href="#" data-toggle="modal" data-target="#rentModal">Rent</a>
+      </div>
      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="rentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="signup-position modal-dialog" role="document">
+    <div class="options modal-content">
+      <div class="modal-body">
+        <%= simple_form_for([@item, @rental]) do |f| %>
+        <%= f.error_notification %>
+        <h3> Rent </h3>
+        <div class="form-inputs">
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.input :address, required: true, autofocus: true %>
+          <%= f.input :delivery_type, required: true, collection: Rental::DELIVERIES%>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Submit"%>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

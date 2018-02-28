@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @rental = Rental.new
     @item = Item.find(params[:id])
     authorize @item
   end
