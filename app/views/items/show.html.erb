@@ -1,9 +1,8 @@
 
 <div class="container-show">
   <div class="compilation">
-    <div class="image_item">
+    <div class="image_item" style="background-image: url(<%= cl_image_path @item.photo %>)">
     </div>
-    <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
     <div class="details_item">
       <ul>
         <li>Size - <%= @item.size %></li>
@@ -13,10 +12,9 @@
         <% end %>
         <li>Description - <%= @item.description %></li>
      </ul>
-     <button type="button" class="btn">Rent</button>
+     <div class="text-center">
+      <%= link_to "Rent", "#", class: "btn btn-success"  %>
+     </div>
     </div>
   </div>
 </div>
-
-
-
