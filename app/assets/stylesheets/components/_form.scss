@@ -1,7 +1,59 @@
+.signup-position{
+  padding-top: 10px !important;
+}
+
+.login-position{
+  padding-top: 70px !important;
+}
+.options{
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
 .login-form{
+
+  font-style: bold;
+  margin: 30 50 50 50px;
+  padding: 40 40px;
+  border-radius: 10px !important;
+  background-size: cover;
+  background-color: $cream;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+
+  input{
+    border-radius: 10px;
+  }
+  select{
+    border-radius: 10px;
+  }
+}
+
+.signup-form{
+  font-style: bold;
+  margin-top: 50 50 50 50px;
+
+  padding: 40px 40px;
+  border-radius: 10px;
+  background-size: cover;
+  background-color: $cream;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  input{
+    border-radius: 10px;
+  }
+  select{
+    border-radius: 10px;
+  }
+}
+
+
+.password-form{
   font-style: bold;
   margin-top: 70px;
-  border: 1px dotted $brown;
+
   padding: 40px;
   border-radius: 10px;
   background-size: cover;
@@ -16,3 +68,16 @@
     border-radius: 10px;
   }
 }
+
+.devise-default{
+  padding-top: 10px;
+  & a{
+    color: $gray;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  & a:hover{
+    opacity: 0.5;
+  }
+}
+

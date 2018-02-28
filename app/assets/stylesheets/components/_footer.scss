@@ -1,11 +1,27 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 100px; /* bottom = footer height */
+}
+
+
 .footer {
-  background: #FFFFFF;
+  background: $white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
   color: #AAAAAA;
+  position: absolute;
+  bottom:0;
+
+  overflow: hidden;
+  left: 0;
+  width:100%;
 }
 .footer-links {
   display: flex;
