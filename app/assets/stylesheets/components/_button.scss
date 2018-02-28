@@ -1,1 +1,16 @@
 
+.btn-profile {
+  color: $brown;
+  border: 1px solid $brown;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+.btn-profile:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: $brown;
+}
+
+

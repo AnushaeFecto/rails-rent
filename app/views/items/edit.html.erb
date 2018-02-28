@@ -1,0 +1,9 @@
+<div class=login-form>
+<% if policy(Item).create? %>
+  <%= render 'form', item: @item %>
+<% end %>
+
+<btn class="btn-general"> <%= link_to 'Destroy', { controller: :items, action: :destroy }, method: :delete, data: { confirm: 'Are you sure?' } %> </btn>
+</div>
+
+
