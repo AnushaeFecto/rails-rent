@@ -6,7 +6,7 @@
   <div class="row">
     <% @items.each do |item| %>
   <div class="col-xs-12 col-sm-4">
-    <div class="image_item" style="background-image: url(<%= cl_image_path @item.photo %>)">
+    <div class="image_item" style="background-image: url(<%= cl_image_path item.photo unless item.photo.blank? %>)">
   </div>
     <% if policy(item).show? %>
       <center><%= link_to "Show", item %></center>
