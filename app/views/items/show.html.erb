@@ -1,2 +1,20 @@
-<h1>Item#show</h1>
-<p>Find me in app/views/item/show.html.erb</p>
+
+<div class="container-show">
+  <div class="compilation">
+    <div class="image_item" style="background-image: url(<%= cl_image_path @item.photo %>)">
+    </div>
+    <div class="details_item">
+      <ul>
+        <li>Size - <%= @item.size %></li>
+        <li>Price - <%= @item.price %></li>
+        <% if @item.category.length > 0 %>
+          <li>Category - <%= @item.category %></li>
+        <% end %>
+        <li>Description - <%= @item.description %></li>
+     </ul>
+     <div class="text-center">
+      <%= link_to "Rent", "#", class: "btn-general", id: "rent-button"  %>
+     </div>
+    </div>
+  </div>
+</div>
