@@ -54,7 +54,16 @@
           url(<%= cl_image_path rental.item.photo, height: 300, width: 400, crop: :fill %>);">
         </div>
         <div class="rental-details">
-          <!-- needs filling in -->
+          <p>Delivery address <%= rental.address %></p>
+          <p>Starts at <%= rental.start_date  %></p>
+          <p>Ends at <%= rental.end_date %></p>
+          <p>Delivery type <%= rental.delivery_type %></p>
+          <% if (rental.delivery_type == "Express 1-2 days £15") %>
+            <% add_value = 15 %>
+          <% else %>
+            <% add_value = 10  %>
+          <% end %>
+          <p>Total price <%= (rental.end_date - rental.start_date)*rental.item.price+add_value %> </p>
         </div>
       </div>
     <% end %>
