@@ -1,35 +1,38 @@
-<div class="container-show">
-  <div class="compilation">
-    <div class="image_profile" style="background-image">
-    </div>
-    <div class="details_item">
-      <ul>
-        <li>Name - <%= @user.name %></li>
-        <li>Address - <%= @user.address %></li>
-        <li>Email - <%= @user.email %></li>
-      </ul>
-      <div class="text-center">
-      </div>
-    </div>
+<div class="container-show padding">
+  <div class="centered from-top">
+    <% if current_user.photo.present? %>
+      <%= cl_image_tag current_user.photo, width: 200, height: 200, radius: :max, crop: :fill %>
+    <% else %>
+      <%= image_tag "smiley.jpg", width: 200, height: 200, radius: :max, crop: :fill %>
+    <% end %>
+  </div>
+  <div class="personal-details">
+    <p class="bold centered"><%= @user.name %></p>
+    <p class="lighter centered float-left">Address - <%= @user.address %></p>
+    <p class="lighter centered float-right">Email - <%= @user.email %></p>
   </div>
 </div>
 
+<div class="centered"><%= link_to "create new item", new_item_path, class: "btn-create"%></div>
 
-
-<div class="container-show top">
-  <div><h2 class="centered">My rentals requests</h2></div>
+<div class="container-show top padding">
+  <div><h2 class="topped">Requests for my clothes</h2></div>
   <% @rental_requests.each do |rental| %>
     <div class="main-container">
       <div class="request-owner">
-        <h3>Avatar</h3>
-        <p>The email of rental requester is <%= rental.user.email %></p>
+        <%= cl_image_tag rental.user.photo, width: 100, height: 100, radius: :max, crop: :scale %>
+        <p class="small"><%= rental.user.name %> likes your clothes!</p>
       </div>
       <div class="rental-details">
-        <p>Address <%= rental.address %></p>
-        <p>Starts at <%= rental.start_date  %></p>
-        <p>Ends at <%= rental.end_date %></p>
-        <p>Delivery type <%= rental.delivery_type %></p>
-        <p>Price <%= rental.item.price %></p>
+        <p class="bold centered down">Needed from <%= rental.start_date %> to <%= rental.end_date %></p>
+        <p class="lighter centered">Postal address for this item: <%= rental.address %></p>
+        <% if (rental.delivery_type == "Express 1-2 days £15") %>
+          <% add_value = 15 %>
+        <% else %>
+          <% add_value = 10 %>
+        <% end %>
+        <p class="bold float-left down">Total price £<%= (rental.end_date - rental.start_date)*rental.item.price+add_value %></p>
+        <p class="float-right down">Delivery type <%= rental.delivery_type %></p>
       </div>
       <div class="btns">
         <div class="btn-general choice-btn">Accept</div>
@@ -40,32 +43,35 @@
 </div>
 
 
-<div class="container-show top">
-    <div><h2 class="centered">Rentals and requests I have made</h2></div>
-    <% @my_rentals.each do |rental| %>
-      <div class="main-container">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-          url(<%= cl_image_path rental.item.photo, height: 300, width: 400, crop: :fill %>);">
-        </div>
-        <div class="rental-details">
-          <!-- needs filling in -->
-        </div>
+<div class="container-show top padding">
+  <div><h2 class="topped">Other people's clothes I have requested</h2></div>
+  <% @my_rentals.each do |rental| %>
+    <div class="main-container">
+      <div class="request-owner inset-left">
+        <%= cl_image_tag rental.item.photo, width: 150, height: 150, radius: 10, crop: :scale %>
       </div>
-    <% end %>
+      <div class="rental-details">
+        <p class="bold centered down">The dates you booked are <%= rental.start_date %> to <%= rental.end_date %></p>
+        <p class="lighter centered">The address you asked for it to be sent to: <%= rental.address %></p>
+        <% if (rental.delivery_type == "Express 1-2 days £15") %>
+          <% add_value = 15 %>
+        <% else %>
+          <% add_value = 10 %>
+        <% end %>
+        <p class="bold float-left down">Total price £<%= (rental.end_date - rental.start_date)*rental.item.price+add_value %> </p>
+        <p class="float-right down">Delivery type <%= rental.delivery_type %></p>
+      </div>
+    </div>
+  <% end %>
 </div>
 
-
-
-
-
+<div class="centered"><%= link_to "create new item", new_item_path, class: "btn-create"%></div>
 
 <div class="row">
   <div class="cards">
     <% @user.items.each do |item| %>
       <div class="col-xs-12 col-sm-4">
-
         <div class="card-container">
-
           <div class="card-button-row">
             <div><%= link_to "View", item_path(item), class: "btn-general"%>
             </div>
@@ -73,19 +79,11 @@
             </div>
             <div><%= link_to "Delete", item_path(item), class: "btn-general", method: :delete, data: { confirm: "Are you sure?" } %></div>
           </div>
-
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
             url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
           </div>
         </div>
-
       </div>
     <% end %>
   </div>
 </div>
-
-
-
-
-
-
