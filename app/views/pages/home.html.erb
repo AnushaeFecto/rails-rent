@@ -25,9 +25,9 @@
             url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
               <p> See more </p>
               <h5>£ <%= item.price %></h5>
-            <%end%>
         </div>
       </div>
+      <%end%>
     <% end %>
   </div>
 </div>
