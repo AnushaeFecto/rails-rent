@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
 
   def index
     @items = policy_scope(Item).order(created_at: :desc)
+    if params[:search].present?
+      @items = Item.search(params[:search])
+    end
   end
 
   def show

@@ -4,10 +4,15 @@
     <div class="typed">
       <span id="banner-typed-text"></span>
     </div>
-    <form class="form-inline">
-      <input class="input-search form-control" type="text" placeholder="Search">
-      <%= link_to "Search", items_path, class: "btn btn-search" %>
-    </form>
+
+        <%= form_tag items_path, method: :get, class:'form-inline' do %>
+          <div class="input-field">
+          <%= text_field_tag :search, params[:search], class: 'input-search form-control', placeholder: "Search"%>
+          <%= submit_tag "Search", name: nil, class: "btn btn-search" %>
+          </p>
+          </div>
+        <% end %>
+
   </div>
 </div>
 
