@@ -1,6 +1,11 @@
 <div class="container-show">
   <div class="compilation">
-    <div class="image_profile" style="background-image">
+    <div>
+      <% if current_user.photo.present? %>
+        <%= cl_image_tag current_user.photo, :class => "image_profile"%>
+        <% else %>
+        <%= image_tag "smiley.jpg", :class => "image_profile" %>
+        <% end %>
     </div>
     <div class="details_item">
       <ul>
@@ -9,6 +14,7 @@
         <li>Email - <%= @user.email %></li>
       </ul>
       <div class="text-center">
+        <%= link_to "Edit profile", edit_user_path(current_user) %>
       </div>
     </div>
   </div>
@@ -62,10 +68,6 @@
       </div>
     <% end %>
 </div>
-
-
-
-
 
 <div class="row">
   <div class="cards">

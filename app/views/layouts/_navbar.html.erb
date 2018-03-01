@@ -16,7 +16,11 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% if current_user.photo.present? %>
+            <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% else %>
+          <%= image_tag "smiley.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to user_path(current_user) do %>
@@ -95,12 +99,10 @@
         <h3> Sign Up </h3>
         <div class="form-inputs">
           <%= f.input :name, required: true, autofocus: true %>
-          <%= f.input :address, required: true, autofocus: true %>
           <%= f.input :email, required: true, autofocus: true %>
+
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Sign up"%>

@@ -10,4 +10,28 @@ class UsersController < ApplicationController
 
     authorize @user
   end
+
+  def edit
+    @user = User.find(params[:id])
+    redirect_to root_path if @user != current_user
+    authorize @user
+
+  end
+
+  def update
+    @user = current_user
+    authorize @user
+
+    if @user.update(user_params)
+      redirect_to user_path(current_user)
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :address, :email, :photo)
+  end
 end
