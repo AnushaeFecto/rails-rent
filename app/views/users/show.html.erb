@@ -1,97 +1,88 @@
-
-
-
-  <div class="container-show">
-    <div class="compilation">
-      <div class="image_profile" style="background-image">
+<div class="container-show">
+  <div class="compilation">
+    <div class="image_profile" style="background-image">
+    </div>
+    <div class="details_item">
+      <ul>
+        <li>Name - <%= @user.name %></li>
+        <li>Address - <%= @user.address %></li>
+        <li>Email - <%= @user.email %></li>
+      </ul>
+      <div class="text-center">
       </div>
-      <div class="details_item">
-        <ul>
-          <li>Name - <%= @user.name %></li>
-          <li>Address - <%= @user.address %></li>
-          <li>Email - <%= @user.email %></li>
-        </ul>
-        <div class="text-center">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-show top">
+  <div><h2 class="centered">My rentals requests</h2></div>
+  <% @rental_requests.each do |rental| %>
+    <div class="main-container">
+      <div class="request-owner">
+        <h3>Avatar</h3>
+        <p>The email of rental requester is <%= rental.user.email %></p>
+      </div>
+      <div class="rental-details">
+        <p>Address <%= rental.address %></p>
+        <p>Starts at <%= rental.start_date  %></p>
+        <p>Ends at <%= rental.end_date %></p>
+        <p>Delivery type <%= rental.delivery_type %></p>
+        <p>Price <%= rental.item.price %></p>
+      </div>
+      <div class="btns">
+        <div class="btn-general choice-btn">Accept</div>
+        <div class="btn-general choice-btn">Reject</div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="container-show top">
+    <div><h2 class="centered">Rentals and requests I have made</h2></div>
+    <% @my_rentals.each do |rental| %>
+      <div class="main-container">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+          url(<%= cl_image_path rental.item.photo, height: 300, width: 400, crop: :fill %>);">
+        </div>
+        <div class="rental-details">
+          <!-- needs filling in -->
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="container-show">
-    <div class="compilation">
-      <div class="container">
-
-        <div><h2 class="centered">My Rentals</h2></div>
-
-            <% @rental_requests.each do |rental| %>
-              <div class="row">
-                <div class="rental-box hidden-xs">
-                  <div class="col-xs-12 col-sm-3">
-                      The guy who wanrts this is <%= rental.user.email %>
-                  </div>
-
-                  <div class="col-xs-12 col-sm-3">
-                    Your Item: <%= rental.item.description %>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    <%= rental.start_date %>
-                    <%= rental.end_date %>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="btns">
-                      <div class="btn-general choice-btn">Accept</div>
-                      <div class="btn-general choice-btn">Reject</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-
-            <% @my_rentals.each do |rental| %>
-              <div class="row">
-                <div class="rental-box hidden-xs">
-                  <div class="col-xs-12 col-sm-3">
-                      my email is <%= rental.user.email %>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    Your Item: <%= rental.item.description %>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    <%= rental.address %>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-
-      </div>
-    </div>
-  </div>
+    <% end %>
+</div>
 
 
-  <div class="row">
-    <div class="cards">
-      <% @user.items.each do |item| %>
-        <div class="col-xs-12 col-sm-4">
 
-          <div class="card-container">
 
-            <div class="card-button-row">
-              <div><%= link_to "View", item_path(item), class: "btn-general"%>
-              </div>
-              <div><%= link_to "Edit", edit_item_path(item), class: "btn-general"%>
-              </div>
-              <div><%= link_to "Delete", item_path(item), class: "btn-general", method: :delete, data: { confirm: "Are you sure?" } %></div>
+
+
+<div class="row">
+  <div class="cards">
+    <% @user.items.each do |item| %>
+      <div class="col-xs-12 col-sm-4">
+
+        <div class="card-container">
+
+          <div class="card-button-row">
+            <div><%= link_to "View", item_path(item), class: "btn-general"%>
             </div>
-
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
+            <div><%= link_to "Edit", edit_item_path(item), class: "btn-general"%>
             </div>
+            <div><%= link_to "Delete", item_path(item), class: "btn-general", method: :delete, data: { confirm: "Are you sure?" } %></div>
           </div>
 
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
+          </div>
         </div>
-      <% end %>
-    </div>
+
+      </div>
+    <% end %>
   </div>
+</div>
 
 
 
