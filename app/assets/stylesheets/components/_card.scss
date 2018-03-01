@@ -4,6 +4,16 @@
   margin-top: 15px;
 }
 
+.card-container2 {
+  height: 500px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 10px;
+}
+
 .card-button-row {
   display: flex;
   justify-content: space-around;
@@ -37,7 +47,6 @@
     color: $white;
   }
 }
-
 
 .card h5:hover{
   opacity:1;
