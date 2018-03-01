@@ -12,8 +12,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
-  authorize @user
+    @user = User.find(params[:id])
+    redirect_to root_path if @user != current_user
+    authorize @user
 
   end
 
