@@ -79,10 +79,10 @@
         <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
             url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
         </div>
-        <div class="card-text">
-          <%= link_to "View", item_path(item), class: "card-text-1"%>
-          <%= link_to "Edit", edit_item_path(item), class: "card-text-2"%>
-          <%= link_to "Delete", item_path(item), class: "card-text-3", method: :delete, data: { confirm: "Are you sure?" } %>
+        <div class="card-text text-center">
+          <%= link_to "View", item_path(item), id: "card-text-1"%>
+          <%= link_to "Edit", edit_item_path(item), id: "card-text-2"%>
+          <%= link_to "Delete", item_path(item), id: "card-text-3", method: :delete, data: { confirm: "Are you sure?" } %>
         </div>
     </div>
     <%end%>
