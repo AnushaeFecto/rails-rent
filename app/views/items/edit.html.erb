@@ -6,7 +6,7 @@
       <%= render 'form', item: @item %>
     <% end %>
     <p></p>
-    <btn class="btn-general2"><%= link_to 'Destroy', { controller: :items, action: :destroy }, method: :delete, data: { confirm: 'Are you sure?' } %></btn>
+    <%= link_to 'Destroy', { controller: :items, action: :destroy }, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-general2"%>
 
     </div>
   </div>
