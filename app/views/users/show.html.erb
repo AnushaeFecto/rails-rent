@@ -9,9 +9,9 @@
   </div>
   <div class="personal-details">
     <p class="bold centered"><%= @user.name %></p>
-    <p class="lighter centered float-left">Address - <%= @user.address %></p>
-    <p class="lighter centered float-right">Email - <%= @user.email %></p>
-
+    <div class="centered"><%= link_to "update my details", edit_user_path(current_user), class: "btn-profile" %></div>
+    <p class="lighter centered">My address - <%= @user.address %></p>
+    <p class="lighter centered">My email - <%= @user.email %></p>
   </div>
 </div>
 
@@ -51,7 +51,14 @@
   <% @my_rentals.each do |rental| %>
     <div class="main-container">
       <div class="request-owner inset-left">
+
+      <%= link_to item_path(rental.item) do %>
         <%= cl_image_tag rental.item.photo, width: 150, height: 150, radius: 10, crop: :scale %>
+        <% end %>
+      </div>
+
+
+
 
       </div>
       <div class="rental-details">
