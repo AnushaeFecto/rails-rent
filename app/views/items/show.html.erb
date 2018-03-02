@@ -14,7 +14,9 @@
      </ul>
      <div class="text-center">
       <div class="rent">
-        <a href="#" data-toggle="modal" data-target="#rentModal">Rent</a>
+        <% if @item.user != current_user %>
+          <a href="#" data-toggle="modal" data-target="#rentModal">Rent</a>
+        <% end %>
       </div>
      </div>
     </div>
