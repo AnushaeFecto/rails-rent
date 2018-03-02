@@ -106,3 +106,22 @@
 .search-form{
   align-items: center;
 }
+
+.edit-profile-form{
+  color: $brown;
+  drop-shadow: 10px;
+  font-style: bold;
+  margin-top: 70px;
+  padding: 40px;
+  border-radius: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 2px dotted;
+  input{
+    border-radius: 10px;
+  }
+  select{
+    border-radius: 10px;
+  }
+}
