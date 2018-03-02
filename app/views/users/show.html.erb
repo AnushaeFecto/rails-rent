@@ -51,7 +51,14 @@
   <% @my_rentals.each do |rental| %>
     <div class="main-container">
       <div class="request-owner inset-left">
+
+      <%= link_to item_path(rental.item) do %>
         <%= cl_image_tag rental.item.photo, width: 150, height: 150, radius: 10, crop: :scale %>
+        <% end %>
+      </div>
+
+
+
 
       </div>
       <div class="rental-details">
