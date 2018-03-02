@@ -18,3 +18,15 @@ a:hover {
   text-decoration: none !important;
 }
 
+.btn-create {
+  color: $brown;
+  border: 1px solid $brown;
+  padding: 0 15px;
+  height: 130px;
+  width: 180px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  font-size: 32px;
+  background-color: $green;
+}
