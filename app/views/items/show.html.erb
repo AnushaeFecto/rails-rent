@@ -1,25 +1,49 @@
 
 <div class="container-show">
-  <div class="compilation">
-    <div class="image_item" style="background-image: url(<%= cl_image_path @item.photo unless @item.photo.blank? %>)">
-    </div>
-    <div class="details_item">
-      <ul style="list-style-type:none">
-        <li>Size - <%= @item.size %></li>
-        <li>Price - £<%= @item.price %></li>
-        <% if @item.category.length > 0 %>
-          <li>Category - <%= @item.category %></li>
-        <% end %>
-        <li>Description - <%= @item.description %></li>
-     </ul>
-     <div class="text-center">
-      <div class="rent">
-        <a href="#" data-toggle="modal" data-target="#rentModal">Rent</a>
+  <div class="container">
+    <div class="row">
+
+
+
+
+      <div class="col-xs-12 col-md-4 col-md-offset-2">
+        <div class="image_item" style="background-image: url(<%= cl_image_path @item.photo unless @item.photo.blank? %>)">
+        </div>
       </div>
-     </div>
+      <div class="col-xs-12 col-md-4 col-md-offset-0">
+        <ul style="margin-top: 80px;list-style-type:none">
+          <li>Size - <%= @item.size %></li>
+          <li>Price - £<%= @item.price %></li>
+          <% if @item.category.length > 0 %>
+            <li>Category - <%= @item.category %></li>
+          <% end %>
+          <li>Description - <%= @item.description %></li>
+         </ul>
+         <div class="text-center">
+          <div class="rent">
+            <a href="#" data-toggle="modal" data-target="#rentModal">Rent</a>
+          </div>
+         </div>
+      </div>
+      <!-- <div class="col-xs-12 col-md-4 offset-md-2">
+        <ul style="list-style-type:none">
+          <li>Size - <%= @item.size %></li>
+          <li>Price - £<%= @item.price %></li>
+          <% if @item.category.length > 0 %>
+            <li>Category - <%= @item.category %></li>
+          <% end %>
+          <li>Description - <%= @item.description %></li>
+         </ul>
+         <div class="text-center">
+          <div class="rent">
+            <a href="#" data-toggle="modal" data-target="#rentModal">Rent</a>
+          </div>
+         </div>
+      </div> -->
     </div>
   </div>
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="rentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="signup-position modal-dialog" role="document">
