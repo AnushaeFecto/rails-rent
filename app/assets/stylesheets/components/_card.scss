@@ -6,42 +6,49 @@
   background-repeat: no-repeat;
   color: white;
   position: relative;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  & h5{
-    position: absolute;
-    bottom: 15px;
-    padding: 15px;
-    color: $white;
-  } & p {
-    bottom: 5px;
-    position: absolute;
-    padding-left: 15px;
-    color: $white;
-  }
-}
-.card-text-1{
-  color: $brown;
-}
-.card-text-2{
-  color: $brown;
-}
-.card-text-3{
-  color: $brown;
-}
-.card-text-1:hover{
-  color: $brown;
-  opacity: 0.7;
-}
-.card-text-2:hover{
-  color: $brown;
-  opacity: 0.7;
-}
-.card-text-3:hover{
-  color: $brown;
-  opacity: 0.7;
+  border-radius: 10px 10px 0px 0px;
 }
 
+
+#card-text-1{
+  color: $brown;
+  align-text:center;
+  margin-right:20px;
+  text-decoration: none;
+}
+#card-text-2{
+  color: $brown;
+  margin-right:20px;
+  text-decoration: none;
+}
+#card-text-3{
+  color: $brown;
+  margin-right:20px;
+  text-decoration: none;
+}
+#card-text-1:hover{
+  color: $brown;
+  opacity: 0.7;
+  text-decoration: none;
+}
+#card-text-2:hover{
+  color: $brown;
+  opacity: 0.7;
+  text-decoration: none;
+}
+#card-text-3:hover{
+  color: $brown;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.card-text{
+  height: 50px;
+  background-color: $white;
+  margin-bottom: 20px;
+  border-radius: 0px 0px 10px 10px;
+  padding-top: 10px;
+}
 
 
 
@@ -80,7 +87,6 @@
   background-repeat: no-repeat;
   color: white;
   position: relative;
-  border-radius: 10px;
   margin-bottom: 15px;
   & h5{
     position: absolute;
