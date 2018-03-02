@@ -1,8 +1,12 @@
-<div class=login-form>
+<div class="container">
+<div class=create-position>
+<div class="create-form">
+
 <% if policy(Item).create? %>
   <%= render 'form', item: @item %>
 <% end %>
 
 </div>
-
+</div>
+</div>
 

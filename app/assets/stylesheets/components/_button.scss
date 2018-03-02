@@ -1,17 +1,17 @@
 .btn-general {
-  color: $brown;
-  border: 1px solid $brown;
+  color: white;
+  border: 1px $cream;
   padding: 0 15px;
-  height: 23px;
-  border-radius: 50px;
-  font-weight: lighter;
+  height: 25px;
+  border-radius: 10px;
+  font-weight: normal;
   opacity: 0.8;
   font-size: 16px;
-  background-color: $green;
+  background-color: $brown;
 }
 .btn-general:hover{
-  opacity: 1;
-  color: $brown;
+  opacity: 0.5;
+  color: $cream;
 }
 
 a:hover {

@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :rentals
   validates :name, presence: :true
-  validates :address, presence: :true, uniqueness: :true
-  mount_uploader :photo, PhotoUploader, :mount_on => :photo
+  #validates :address, presence: :true, uniqueness: :true
+  mount_uploader :photo, PhotoUploader
 end
