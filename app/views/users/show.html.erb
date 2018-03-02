@@ -9,9 +9,9 @@
   </div>
   <div class="personal-details">
     <p class="bold centered"><%= @user.name %></p>
-    <p class="lighter centered float-left">Address - <%= @user.address %></p>
-    <p class="lighter centered float-right">Email - <%= @user.email %></p>
-
+    <div class="centered"><%= link_to "update my details", edit_user_path(current_user), class: "btn-profile" %></div>
+    <p class="lighter centered">My address - <%= @user.address %></p>
+    <p class="lighter centered">My email - <%= @user.email %></p>
   </div>
 </div>
 
