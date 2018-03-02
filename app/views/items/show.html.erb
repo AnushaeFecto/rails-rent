@@ -19,7 +19,9 @@
          </ul>
          <div class="text-center">
           <div class="rent">
-            <% if @item.user != current_user %>
+            <% if user_signed_in? == false %>
+              <a href="#" class="btn-general choice-btn" data-toggle="modal" data-target="#logInModal">Log in to rent this</a>
+            <% elsif @item.user != current_user %>
               <a href="#" data-toggle="modal" data-target="#rentModal" class="btn-general choice-btn">Rent</a>
             <% else %>
               <%= link_to "Back to my profile", user_path(current_user), class: "btn-general choice-btn"%>
