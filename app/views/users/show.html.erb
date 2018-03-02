@@ -18,7 +18,7 @@
 <div class="centered"><%= link_to "Create New Item", new_item_path, class: "btn-profile"%></div>
 
 <div class="container-show top padding">
-  <div><h2 class="topped">Requests for my clothes</h2></div>
+  <div><h3 class="topped">Requests Received</h3></div>
   <% @rental_requests.each do |rental| %>
     <div class="main-container">
       <div class="request-owner">
@@ -47,7 +47,7 @@
 
 
 <div class="container-show top padding">
-  <div><h2 class="topped">Other people's clothes I have requested</h2></div>
+  <div><h3 class="topped">Requests Made</h3></div>
   <% @my_rentals.each do |rental| %>
     <div class="main-container">
       <div class="request-owner inset-left">
