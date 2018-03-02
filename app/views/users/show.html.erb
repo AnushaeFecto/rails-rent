@@ -51,15 +51,9 @@
   <% @my_rentals.each do |rental| %>
     <div class="main-container">
       <div class="request-owner inset-left">
-
-      <%= link_to item_path(rental.item) do %>
-        <%= cl_image_tag rental.item.photo, width: 150, height: 150, radius: 10, crop: :scale %>
+        <%= link_to item_path(rental.item) do %>
+          <%= cl_image_tag rental.item.photo, width: 150, height: 150, radius: 10, crop: :scale %>
         <% end %>
-      </div>
-
-
-
-
       </div>
       <div class="rental-details">
         <p class="bold centered down">The dates you booked are <%= rental.start_date %> to <%= rental.end_date %></p>
@@ -75,6 +69,7 @@
     </div>
   <% end %>
 </div>
+
 <div class="centered"><%= link_to "create new item", new_item_path, class: "btn-create"%></div>
 
 <div class="container align-middle content">
