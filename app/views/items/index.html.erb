@@ -1,19 +1,19 @@
 
 <%#= cl_image_tag("image.png", width: 400, height: 300, crop: :fill) %>
-<center><h1>All items</h1></center>
-<div class="container">
+
+<div class="container align-middle content">
+<center><h2>Rent Me!</h2></center>
   <div class="row">
     <% @items.each do |item| %>
-  <div class="col-xs-12 col-sm-5 col-md-4">
-  <%= link_to item_path(item), :class => "rent-link" do %>
-    <div class="image_item" style="background-image: url(<%= cl_image_path item.photo unless item.photo.blank? %>)">
-  </div>
-    <% if policy(item).show? %>
-      <center><%= link_to "Show", item %></center>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to item_path(item), :class => "rent-link" do %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+      url(<%= cl_image_path item.photo, height: 300, width: 400, crop: :fill if item.photo.present? %>);">
+       <p> See more </p>
+       <h5>£ <%= item.price %></h5>
+      </div>
+    </div>
+    <%end%>
     <% end %>
   </div>
-  <% end %>
-  <% end %>
-</div>
-
 </div>
