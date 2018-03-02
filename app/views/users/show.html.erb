@@ -9,13 +9,13 @@
   </div>
   <div class="personal-details">
     <p class="bold centered"><%= @user.name %></p>
-    <div class="centered"><%= link_to "update my details", edit_user_path(current_user), class: "btn-profile" %></div>
+    <div class="centered"><%= link_to "Update My Details", edit_user_path(current_user), class: "btn-profile" %></div>
     <p class="lighter centered">My address - <%= @user.address %></p>
     <p class="lighter centered">My email - <%= @user.email %></p>
   </div>
 </div>
 
-<div class="centered"><%= link_to "create new item", new_item_path, class: "btn-create"%></div>
+<div class="centered"><%= link_to "Create New Item", new_item_path, class: "btn-profile"%></div>
 
 <div class="container-show top padding">
   <div><h2 class="topped">Requests for my clothes</h2></div>
@@ -38,7 +38,7 @@
       </div>
       <div class="btns">
         <div class="btn-general choice-btn">Accept</div>
-        <div class="btn-general choice-btn">Reject</div>
+        <div class="btn-general2 choice-btn">Reject</div>
       </div>
     </div>
   <% end %>
@@ -70,7 +70,7 @@
   <% end %>
 </div>
 
-<div class="centered"><%= link_to "create new item", new_item_path, class: "btn-create"%></div>
+<div class="centered"><%= link_to "Create New Item", new_item_path, class: "btn-profile"%></div>
 
 <div class="container align-middle content">
   <div class="row">

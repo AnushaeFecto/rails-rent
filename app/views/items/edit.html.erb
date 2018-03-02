@@ -5,9 +5,9 @@
     <% if policy(Item).create? %>
       <%= render 'form', item: @item %>
     <% end %>
+    <p></p>
+    <btn class="btn-general2"><%= link_to 'Destroy', { controller: :items, action: :destroy }, method: :delete, data: { confirm: 'Are you sure?' } %></btn>
 
-    <btn class="btn-general"> <%= link_to 'Destroy', { controller: :items, action: :destroy }, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </btn>
     </div>
   </div>
 </div>
