@@ -4,9 +4,9 @@
     <div class="image_item" style="background-image: url(<%= cl_image_path @item.photo unless @item.photo.blank? %>)">
     </div>
     <div class="details_item">
-      <ul>
+      <ul style="list-style-type:none">
         <li>Size - <%= @item.size %></li>
-        <li>Price - <%= @item.price %></li>
+        <li>Price - £<%= @item.price %></li>
         <% if @item.category.length > 0 %>
           <li>Category - <%= @item.category %></li>
         <% end %>
@@ -14,7 +14,9 @@
      </ul>
      <div class="text-center">
       <div class="rent">
-        <a href="#" data-toggle="modal" data-target="#rentModal">Rent</a>
+        <% if @item.user != current_user %>
+          <a href="#" data-toggle="modal" data-target="#rentModal">Rent</a>
+        <% end %>
       </div>
      </div>
     </div>

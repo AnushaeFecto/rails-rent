@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     authorize @item
     @item.update(item_params)
-    redirect_to item_path(@item)
+    redirect_to user_path(current_user)
   end
 
   def destroy

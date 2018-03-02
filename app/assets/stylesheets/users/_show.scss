@@ -1,8 +1,46 @@
 .main-container {
   display: flex;
-  border: solid black;
+  border: solid $cream;
+  border-radius: 50px;
   position: relative;
   margin: 10px;
+  padding: 15px;
+}
+.personal-details {
+}
+.request-owner {
+  text-align: center;
+  height: 150px;
+  width: 140px;
+}
+.bold {
+  font-weight: bold;
+}
+.down {
+  margin-top: 20px;
+}
+.rental-details {
+  flex-grow: 1;
+  margin-right: 70px;
+  margin-left: 70px;
+}
+.float-left {
+  float: left;
+  margin-left: 20px;
+}
+.float-right {
+  float: right;
+  margin-right: 20px;
+}
+.lighter {
+  font-weight: lighter;
+  font-style: italic;
+}
+.small {
+  font-size: 16px;
+}
+.inset-left {
+  margin-left: 30px;
 }
 
 
@@ -20,11 +58,21 @@
 
 .centered {
   text-align: center;
-  margin: 15px;
 }
 
 .top {
   align-items: top;
+}
+.topped {
+  margin-top: 5px;
+  margin-left: 40px;
+}
+.from-top {
+  margin-top: 25px;
+}
+.padding {
+  padding-top: 5px;
+  padding-bottom: 15px;
 }
 
 .rental-box {
@@ -45,8 +93,10 @@
 }
 .choice-btn {
   width: 90px;
+  margin: 8px 0;
 }
 
 .btns {
-  margin-left: 25%;
+  margin: 30px 0;
+  width: 100px;
 }
